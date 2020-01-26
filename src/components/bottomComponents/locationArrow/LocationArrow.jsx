@@ -12,13 +12,9 @@ const LocationArrowWrapper = styled.span`
   width: 50px;
   height: 50px;
   border-radius: 25px;
-  margin-bottom: 115px;
-  float: right;
-  &::after{
-    display: block;
-   content: "";
-   clear: both;
-  }
+  position: absolute;
+  bottom: 195px;
+  right: 20px;
 `;
 
 function LocationArrow (){

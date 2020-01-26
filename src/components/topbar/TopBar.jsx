@@ -33,8 +33,6 @@ const Title = styled.h2`
   display: inline-block;
   font-family: GTWalsheimPro;
   font-size: 20px;
-  position: relative;
-  top: -2px;
   text-transform: uppercase;
 `;
 

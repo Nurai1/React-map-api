@@ -1,21 +1,29 @@
 @font-face {
-  font-family: 'GTWalsheimPro';
-  font-style: normal;
-  font-weight: bold;
-  src: local('GT Walsheim Pro Bold'), local('GTWalsheimPro-Bold'),
-       url('./GTWalsheimPro-Bold.woff2') format('woff2'), /* Super Modern Browsers */
-       url('./GTWalsheimPro-Bold.woff') format('woff'), /* Modern Browsers */
-       url('./GTWalsheimPro-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('./GTWalsheimPro-Bold.svg') format('svg'); /* Legacy iOS */
-}
+    font-family: 'GTWalsheimPro';
+    src: local('GT Walsheim Pro Regular'), local('GT-Walsheim-Pro-Regular'),
+        url('GTWalsheimPro-Regular.woff2') format('woff2'),
+        url('GTWalsheimPro-Regular.woff') format('woff'),
+        url('GTWalsheimPro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
 
-@font-face {
-  font-family: 'GTWalsheimPro';
-  font-style: normal;
-  font-weight: medium;
-  src: local('GT Walsheim Pro Medium'), local('GTWalsheimPro-Medium'),
-       url('./GTWalsheimPro-Medium.woff2') format('woff2'), /* Super Modern Browsers */
-       url('./GTWalsheimPro-Medium.woff') format('woff'), /* Modern Browsers */
-       url('./GTWalsheimPro-Medium.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('./GTWalsheimPro-Medium.svg') format('svg'); /* Legacy iOS */
-}
+  @font-face {
+      font-family: 'GTWalsheimPro';
+      src: local('GT Walsheim Pro Bold'), local('GT-Walsheim-Pro-Bold'),
+          url('GTWalsheimPro-Bold.woff2') format('woff2'),
+          url('GTWalsheimPro-Bold.woff') format('woff'),
+          url('GTWalsheimPro-Bold.ttf') format('truetype');
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'GTWalsheimPro';
+        src: local('GT Walsheim Pro Medium'), local('GT-Walsheim-Pro-Medium'),
+            url('GTWalsheimPro-Medium.woff2') format('woff2'),
+            url('GTWalsheimPro-Medium.woff') format('woff'),
+            url('GTWalsheimPro-Medium.ttf') format('truetype');
+        font-weight: medium;
+        font-style: normal;
+      }
