@@ -3,8 +3,8 @@ import styled from 'styled-components'
 const Button = styled.button`
 	width: 100%;
 	height: 50px;
-	color: ${props=>props.theme.secondaryColor};
-  background: ${props=>props.theme.primaryColor};
+	color: ${(props) => props.theme.secondaryColor};
+  background: ${(props) => props.theme.primaryColor};
   font-family: GTWalsheimPro;
   font-style: normal;
   font-weight: 500;

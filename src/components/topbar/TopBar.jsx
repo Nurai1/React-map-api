@@ -14,8 +14,8 @@ const TopbarWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-	color: ${props=>props.theme.primaryColor};
-  background: ${props=>props.theme.secondaryColor};
+	color: ${(props) => props.theme.primaryColor};
+  background: ${(props) => props.theme.secondaryColor};
 `;
 
 const FontAwesomeIconWrapper = styled(FontAwesomeIcon)`
@@ -36,14 +36,14 @@ const Title = styled.h2`
   text-transform: uppercase;
 `;
 
-function TopBar (){
-  return(
-    <TopbarWrapper>
-      <FontAwesomeIconWrapper icon={faChevronLeft} className="isLeftArrow"/>
-      <Title>готово</Title>
-      <FontAwesomeIconWrapper icon={faBars} className="isBars"/>
-    </TopbarWrapper>
-  )
+function TopBar() {
+	return (
+  <TopbarWrapper>
+    <FontAwesomeIconWrapper icon={faChevronLeft} className="isLeftArrow" />
+    <Title>готово</Title>
+    <FontAwesomeIconWrapper icon={faBars} className="isBars" />
+  </TopbarWrapper>
+	)
 }
 
 export default TopBar

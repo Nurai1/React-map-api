@@ -17,15 +17,14 @@ const SliderButton = styled(Button)`
     margin-right: 0;
   }
 
-  background: ${props=>props.theme.secondaryColor};
+  background: ${(props) => props.theme.secondaryColor};
 
-  ${props=>{
-    if (props.isTextGray){
-      return "color:#808080";
-    }
-    else{
-      return "color:"+props.theme.primaryColor;
-    }
-  }}
+  ${(props) => {
+		if (props.isTextGray) {
+			return 'color:#808080';
+		}
+		return `color:${props.theme.primaryColor}`;
+	}}
 `;
+
 export default SliderButton

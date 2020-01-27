@@ -10,12 +10,12 @@ const MainButtonWrapper = styled.div`
   left: 20px;
 `;
 
-function MainButton(){
-  return (
-    <MainButtonWrapper>
-      <Button>Доставить сюда</Button>
-    </MainButtonWrapper>
-  )
+function MainButton() {
+	return (
+  <MainButtonWrapper>
+    <Button>Доставить сюда</Button>
+  </MainButtonWrapper>
+	)
 }
 
 export default MainButton

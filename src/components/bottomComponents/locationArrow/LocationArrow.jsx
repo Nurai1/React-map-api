@@ -1,13 +1,13 @@
-import React from 'react'
-import styled from 'styled-components'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLocationArrow } from '@fortawesome/free-solid-svg-icons'
+import React from 'react';
+import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLocationArrow } from '@fortawesome/free-solid-svg-icons';
 
 const LocationArrowWrapper = styled.span`
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  background: ${props=>props.theme.secondaryColor};
+  background: ${(props) => props.theme.secondaryColor};
   font-size: 21px;
   width: 50px;
   height: 50px;
@@ -17,12 +17,12 @@ const LocationArrowWrapper = styled.span`
   right: 20px;
 `;
 
-function LocationArrow (){
-  return (
-    <LocationArrowWrapper>
-      <FontAwesomeIcon icon={faLocationArrow}></FontAwesomeIcon>
-    </LocationArrowWrapper>
-  )
+function LocationArrow() {
+	return (
+  <LocationArrowWrapper>
+    <FontAwesomeIcon icon={faLocationArrow} />
+  </LocationArrowWrapper>
+	)
 }
 
 export default LocationArrow

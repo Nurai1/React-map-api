@@ -11,27 +11,27 @@ const MapContainer = styled.div`
 	height: auto;
 `;
 
-function Map (props){
-	let mapContainer = React.createRef();
+function Map(props) {
+	const mapContainer = React.createRef();
 
-	useEffect (() => {
-		let map = new mapboxgl.Map({
-				container: mapContainer.current,
-				style: 'mapbox://styles/mapbox/streets-v11',
-				center: [props.coords.lng, props.coords.lat],
-				zoom: props.coords.zoom
-			});
-			let marker = new mapboxgl.Marker();
-					marker.setLngLat([props.coords.lng, props.coords.lat])
-								.addTo(map);
-
+	useEffect(() => {
+		const map = new mapboxgl.Map({
+			container: mapContainer.current,
+			style: 'mapbox://styles/mapbox/streets-v11',
+			center: [props.coords.lng, props.coords.lat],
+			zoom: props.coords.zoom
+		});
+		const marker = new mapboxgl.Marker();
+		marker
+			.setLngLat([props.coords.lng, props.coords.lat])
+			.addTo(map);
 	});
 
 	return (
-		<div>
-			<MapContainer ref={mapContainer} />
-    </div>
-		)
+  <div>
+    <MapContainer ref={mapContainer} />
+  </div>
+	)
 }
 
 export default Map
