@@ -6,7 +6,7 @@ module.exports = {
   extends: [
     'plugin:react/recommended',
     'airbnb',
-    //'prettier'
+    // 'prettier'
   ],
   globals: {
     Atomics: 'readonly',
@@ -21,18 +21,11 @@ module.exports = {
   },
   plugins: [
     'react',
-    //'prettier'
+    // 'prettier'
   ],
   rules: {
-    "indent": 0,
-    "no-restricted-syntax": [
-      "error",
-      "WithStatement",
-      "BinaryExpression[operator='in']"
-    ],
-    "react/jsx-props-no-spreading": 0,
+    "react/jsx-filename-extension": 0,
     "react/prop-types": 0,
-    "no-tabs": 0,
-    "linebreak-style": 0
+    "react/jsx-props-no-spreading": 0,
   },
 };

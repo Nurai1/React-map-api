@@ -15,4 +15,5 @@ render(
   <ThemeProvider theme={theme}>
     <App />
   </ThemeProvider>,
-   document.querySelector('.main'))
+  document.querySelector('.main'),
+);
