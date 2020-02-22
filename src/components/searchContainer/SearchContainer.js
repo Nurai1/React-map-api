@@ -82,13 +82,13 @@ const MapPointer = styled.button`
 `;
 
 function SearchContainer(props) {
-  const { visible } = props;
-  if (visible === 'up') {
+  const { visibility } = props;
+  if (visibility === 'up') {
     SearchWrapper = styled(SearchWrapper)`
       animation: ${getContUp} 0.5s linear forwards;
     `;
     props.setSearchContVisibility('none');
-  } else if (visible === 'down') {
+  } else if (visibility === 'down') {
     SearchWrapper = styled(SearchWrapper)`
       animation: ${getContDown} 0.5s linear forwards;
     `;
@@ -103,7 +103,7 @@ function SearchContainer(props) {
     address_value: '',
     lng: 30.3,
     lat: 59.95,
-    zoom: 10.5,
+    zoom: [10.5],
   });
 
   function getCoordinates() {
@@ -111,7 +111,7 @@ function SearchContainer(props) {
       address_value: coordsInner.address_value,
       lng: coordsInner.lng,
       lat: coordsInner.lat,
-      zoom: 17.5,
+      zoom: [17.5],
     });
   }
 

@@ -40,7 +40,7 @@ function TopBar() {
   return (
     <TopbarWrapper>
       <FontAwesomeIconWrapper icon={faChevronLeft} className="isLeftArrow" />
-      <Title>готово</Title>
+      <Title>react delivery</Title>
       <FontAwesomeIconWrapper icon={faBars} className="isBars" />
     </TopbarWrapper>
   );

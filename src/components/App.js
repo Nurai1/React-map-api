@@ -10,7 +10,7 @@ import SearchContainer from './searchContainer/SearchContainer';
 
 const AppContainer = styled.div`
   position: relative;
-  max-width: 375px;
+  max-width: 480px;
   width: 100%;
   max-height: 815px;
   height: 100%;
@@ -20,10 +20,10 @@ const AppContainer = styled.div`
 
 function App() {
   const [coords, setCoords] = useState({
-    address_value: '',
-    lng: 30.3,
-    lat: 59.95,
-    zoom: 10.5,
+    address_value: 'Невский пр., 28',
+    lng: 30.3260765,
+    lat: 59.9355354,
+    zoom: [10.5],
   });
 
   const [searchContVisibility, setSearchContVisibility] = useState('none');
@@ -37,10 +37,11 @@ function App() {
       <Slider
         setVisibility={setSearchContVisibility}
         coordsAddress={coords}
+        setCoordsAddress={setCoords}
       />
       <SearchContainer
         setCoords={setCoords}
-        visible={searchContVisibility}
+        visibility={searchContVisibility}
         setSearchContVisibility={setSearchContVisibility}
       />
     </AppContainer>

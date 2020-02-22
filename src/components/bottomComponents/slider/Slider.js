@@ -21,9 +21,15 @@ class Slider extends React.Component {
 
     this.state = {
       savedAddresses: [
-        'пр. Чернышевского, 17 ',
-      ],
+        {
+          street: 'Невский пр., 28',
+          lng: 30.3260765,
+          lat: 59.9355354,
+        }
+      ]
     };
+
+    this.setCoordsAddress = this.props.setCoordsAddress;
 
     this.slide = this.slide.bind(this);
     this.addAddress = this.addAddress.bind(this);
@@ -33,15 +39,23 @@ class Slider extends React.Component {
     const { coordsAddress } = this.props;
 
     if (coordsAddress.address_value !== prevProps.coordsAddress.address_value) {
-      this.addAddress(coordsAddress.address_value, prevProps.coordsAddress.address_value);
+      this.addAddress(coordsAddress, prevProps.coordsAddress);
     }
   }
 
   addAddress(firstStreet, second) {
     this.setState({
       savedAddresses: [
-        firstStreet,
-        second,
+        {
+          street: firstStreet.address_value,
+          lng: firstStreet.lng,
+          lat: firstStreet.lat,
+        },
+        {
+          street: second.address_value,
+          lng: second.lng,
+          lat: second.lat,
+        },
       ],
     });
   }
@@ -51,17 +65,32 @@ class Slider extends React.Component {
     setVisibility('up');
   }
 
+  updateCoords(streetName) {
+    this.setCoordsAddress({
+      ...streetName,
+      address_value: streetName.street,
+      zoom: [17.5],
+    });
+  }
+
+  //  BEGIN SLIDE FUNCTION
+
   slide(event) {
+    const sliderNode = this.sliderRef;
+    let allSliderButtonNodes = sliderNode.children;
+    if (allSliderButtonNodes.length < 3) {
+      return;
+    }
+
     const sliderButtonNode = this.sliderButtonRef;
     let initX;
+
     if (sliderButtonNode.style.marginLeft === '') {
       initX = event.pageX - 20;
     } else {
       initX = event.pageX - parseInt(sliderButtonNode.style.marginLeft, 10);
     }
 
-    const sliderNode = this.sliderRef;
-    let allSliderButtonNodes = sliderNode.children;
     let sliderNodeWidth = 0;
 
     allSliderButtonNodes = Array.prototype.slice.call(allSliderButtonNodes);
@@ -103,6 +132,7 @@ class Slider extends React.Component {
     };
   }
 
+  //  END SLIDE FUNCTION
 
   render() {
     const { savedAddresses } = this.state;
@@ -121,10 +151,20 @@ class Slider extends React.Component {
         >
           Куда доставить?
         </SliderButton>
-        {savedAddresses[0]
-             && <SliderButton>{savedAddresses[0]}</SliderButton>}
-        {savedAddresses[1]
-             && <SliderButton>{savedAddresses[1]}</SliderButton>}
+        {(savedAddresses[0] === undefined) ? savedAddresses[0] : (savedAddresses[0].street) && (
+          <SliderButton
+            onClick={() => this.updateCoords(savedAddresses[0])}
+          >
+            {savedAddresses[0].street}
+          </SliderButton>
+        )}
+        {(savedAddresses[1] === undefined) ? savedAddresses[1] : (savedAddresses[1].street) && (
+          <SliderButton
+            onClick={() => this.updateCoords(savedAddresses[1])}
+          >
+            {savedAddresses[1].street}
+          </SliderButton>
+        )}
       </SliderWrapper>
     );
   }
